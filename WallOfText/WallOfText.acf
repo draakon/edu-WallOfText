@@ -1,0 +1,11 @@
+/* WallOfText.acf :: Wall of Texti kohaliku tähtsusega spetsifikatsioonid.
+ * Autor: Kristjan Kaitsa
+ * Hajussüsteemid (MTAT.08.009) @ 2011 A.D.  */
+[
+	implicit_handle(handle_t wallOfText_IfHandle)
+]
+interface WallOfText
+{
+	typedef [allocate(dont_free)] pMessage;
+	typedef [allocate(dont_free)] pMessages;
+}

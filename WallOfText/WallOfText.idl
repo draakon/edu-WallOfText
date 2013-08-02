@@ -1,0 +1,22 @@
+/* WallOfText.idl :: Wall of Text liidesekirjeldus.
+ * Autor: Kristjan Kaitsa
+ * Hajussüsteemid (MTAT.08.009) @ 2011 A.D.  */
+[
+	uuid(3e64c978-f038-46f0-bb41-1250efab6bc5),
+	version(1.0)
+]
+interface WallOfText
+{
+	import "time.h";
+
+	typedef struct {
+		time_t time;
+		[string] char *author;
+		[string] char *data;
+	} Message, *pMessage, **pMessages;
+
+	unsigned char ping([in] unsigned char testValue);
+	void addMessage([in] pMessage newMessage);
+	int getMessage([in] unsigned int messageId, [out] pMessage outMessage);
+	unsigned int getLastMessages([in] unsigned int n, [out, size_is(n)] pMessages messages);
+}
